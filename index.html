@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figura &amp; Fundo — Grupo de estudos em Gestalt-terapia</title>
+<meta name="description" content="Grupo de estudos gratuito e on-line em Gestalt-terapia para estudantes de Psicologia a partir do 5º semestre.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F2E8;--bg2:#EBE4D2;--ink:#2B2A22;--olive:#4B5336;--moss:#6F7A4F;--brown:#6A4B35;--line:#D5CCB4;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#1F211A;--bg2:#282B20;--ink:#EEE8D8;--olive:#B7C08F;--moss:#8E9A68;--brown:#D2AF8E;--line:#3E4233}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0 0 .6em;letter-spacing:-.01em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:62ch}a{color:var(--olive)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.alt{background:var(--bg2)}
+:focus-visible{outline:3px solid var(--moss);outline-offset:3px}
+header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.nav strong{font-family:var(--serif);font-weight:600}
+.nav nav{display:flex;gap:22px;font-size:.95rem}.nav nav a{text-decoration:none;color:var(--ink)}
+@media(max-width:720px){.nav nav a:not(.cta-s){display:none}}
+.btn{display:inline-block;background:var(--olive);color:var(--bg);padding:15px 30px;border-radius:999px;border:0;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--brown)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.hero{padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:360px;margin:auto}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:600}
+.hero h1 em{display:block;font-weight:400;font-size:.42em;color:var(--brown);margin-top:.5em}
+.lead{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--olive)}
+.free{display:inline-block;border:1.5px solid var(--olive);color:var(--olive);padding:6px 16px;border-radius:999px;font-weight:600;font-size:.9rem;margin-bottom:22px}
+.hero .row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.fig{animation:breathe 14s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes breathe{50%{transform:scale(1.04) rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){.fig{animation:none}html{scroll-behavior:auto}}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.eixo{padding:28px;background:var(--bg);border:1px solid var(--line);border-radius:28px 6px 28px 6px}
+.eixo:nth-child(2){border-radius:6px 28px 6px 28px}
+.eixo ul{padding-left:1.1em;margin:0}.eixo li{margin-bottom:.4em}
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.blk{padding:22px;border-left:3px solid var(--moss);background:var(--bg2)}
+.alt .blk{background:var(--bg)}
+.blk b{display:block;font-family:var(--serif);font-size:1.15rem;margin-bottom:4px}
+.pending{font-size:.85rem;color:var(--brown)}
+form{background:var(--bg2);padding:clamp(22px,4vw,44px);border-radius:32px 8px 32px 8px;display:grid;gap:20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:640px){.g2{grid-template-columns:1fr}}
+label,legend{font-weight:600;font-size:.95rem;display:block;margin-bottom:6px;padding:0}
+input,textarea,select{width:100%;padding:13px 14px;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px}
+input:focus,textarea:focus,select:focus{border-color:var(--olive)}
+fieldset{border:0;padding:0;margin:0}.radios{display:flex;gap:24px}.radios label,.check label{font-weight:400;display:flex;gap:10px;align-items:flex-start}
+.radios input,.check input{width:auto;margin-top:6px}
+.err{color:#A23B2A;font-size:.88rem;min-height:1.1em;margin-top:4px}
+@media(prefers-color-scheme:dark){.err{color:#F0907D}}
+[aria-invalid=true]{border-color:#A23B2A}
+.hp{position:absolute;left:-9999px}
+.ok{text-align:center;padding:40px 20px}
+.ok h3{font-size:1.8rem}
+footer{background:var(--olive);color:var(--bg);padding:56px 0 40px;font-size:.95rem}
+footer a{color:inherit}footer p{max-width:none;margin-bottom:.5em}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+details{margin-top:14px}summary{cursor:pointer;font-weight:600}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><strong>Figura &amp; Fundo</strong>
+<nav><a href="#sobre">Sobre</a><a href="#estudos">Conteúdos</a><a href="#encontros">Encontros</a><a href="#inscricao" class="cta-s">Inscrição</a></nav></div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<div>
+<span class="free">Participação 100% gratuita</span>
+<h1>Figura &amp; Fundo<em>Grupo de estudos em Gestalt-terapia</em></h1>
+<p class="lead">Um espaço de encontros, diálogos e construção coletiva do conhecimento.</p>
+<p>Para estudantes de Psicologia a partir do 5º semestre que querem aprofundar os fundamentos da Gestalt-terapia e pensá-los junto com a prática clínica, em um grupo horizontal, on-line e sem custos.</p>
+<div class="row"><a class="btn" href="#inscricao">QUERO ME INSCREVER</a><span class="pending">Sem taxa de inscrição e sem mensalidade.</span></div>
+</div>
+<svg viewBox="0 0 400 400" role="img" aria-label="Formas orgânicas sobrepostas: uma figura que emerge de um fundo">
+<rect x="20" y="20" width="360" height="360" rx="180 40 180 40" fill="var(--bg2)"/>
+<path d="M60 250C40 150 120 60 215 80s140 80 110 170-130 120-200 90S75 320 60 250Z" fill="var(--moss)" opacity=".55"/>
+<g class="fig"><path d="M140 210c-20-60 30-120 90-110s90 70 60 130-110 80-150-20Z" fill="var(--olive)"/></g>
+<circle cx="250" cy="170" r="34" fill="var(--bg)"/>
+<path d="M95 310c50 20 120 10 170-20" fill="none" stroke="var(--brown)" stroke-width="3" stroke-linecap="round"/>
+</svg>
+</div></section>
+
+<section id="sobre" class="alt"><div class="wrap">
+<h2>Sobre o grupo</h2>
+<p>O Figura &amp; Fundo é um espaço coletivo e colaborativo de aprendizagem. Aqui não há quem ensina e quem escuta: todas as pessoas participantes são sujeitos ativos, trazendo leituras, perguntas, dúvidas e perspectivas.</p>
+<p>Nossa proposta é aprofundar os fundamentos epistemológicos, filosóficos e teóricos da Gestalt-terapia e articulá-los às possibilidades e aos desafios da prática clínica. O conhecimento é construído no diálogo, e cada contribuição entra no campo do grupo.</p>
+</div></section>
+
+<section id="estudos"><div class="wrap">
+<h2>O que vamos estudar?</h2>
+<div class="cols">
+<div class="eixo"><h3>Fundamentos epistemológicos e filosóficos</h3><ul><li>Fenomenologia</li><li>Existencialismo</li><li>Humanismo</li><li>Teoria de Campo</li><li>Bases históricas da Gestalt-terapia</li></ul></div>
+<div class="eixo"><h3>Fundamentos teóricos</h3><ul><li>Awareness</li><li>Contato e fronteira de contato</li><li>Ajustamento criativo</li><li>Autorregulação organísmica</li><li>Figura e fundo</li><li>Campo organismo-meio</li></ul></div>
+<div class="eixo"><h3>Prática clínica</h3><ul><li>Relação terapêutica</li><li>Atitude fenomenológica</li><li>Escuta clínica</li><li>Experimentações</li><li>Manejo clínico</li><li>Discussões de casos</li></ul></div>
+</div></div></section>
+
+<section id="encontros" class="alt"><div class="wrap">
+<h2>Como funcionarão os encontros?</h2>
+<div class="blocks">
+<div class="blk"><b>On-line</b>Encontros por videochamada.</div>
+<div class="blk"><b>Sábados à tarde</b>Horário exato a confirmar.</div>
+<div class="blk"><b>Quinzenal</b>Periodicidade sujeita à confirmação.</div>
+<div class="blk"><b>Leituras e discussões</b>Leituras orientadas e conversas coletivas.</div>
+<div class="blk"><b>Participação colaborativa</b>Todas as vozes constroem o grupo.</div>
+</div>
+<p class="pending" style="margin-top:20px">Datas, horários e plataforma serão informados às pessoas inscritas pelos contatos fornecidos.</p>
+</div></section>
+
+<section id="inscricao"><div class="wrap" style="max-width:780px">
+<h2>Inscrições</h2>
+<p>A participação é <strong>gratuita</strong>. Preencha o formulário e entraremos em contato.</p>
+<form id="f" novalidate>
+<div class="hp"><label>Não preencha <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<div><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" required><div class="err"></div></div>
+<div class="g2">
+<div><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err"></div></div>
+<div><label for="whats">WhatsApp</label><input id="whats" name="whatsapp" type="tel" placeholder="(DDD) 90000-0000" autocomplete="tel" required><div class="err"></div></div>
+</div>
+<div class="g2">
+<div><label for="inst">Instituição de ensino</label><input id="inst" name="instituicao" required><div class="err"></div></div>
+<div><label for="sem">Semestre atual da graduação</label>
+<select id="sem" name="semestre" required><option value="">Selecione</option><option>5º</option><option>6º</option><option>7º</option><option>8º</option><option>9º</option><option>10º</option><option>Já concluí a parte teórica (estágio/final de curso)</option><option>Menos de 5º semestre</option></select><div class="err"></div></div>
+</div>
+<div><label for="cid">Cidade e estado</label><input id="cid" name="cidade_estado" placeholder="Ex.: Salvador, BA" required><div class="err"></div></div>
+<div><label for="mot">Por que você tem interesse em participar do grupo?</label><textarea id="mot" name="motivacao" rows="5" required></textarea><div class="err"></div></div>
+<fieldset><legend>Você tem disponibilidade para participar dos encontros aos sábados à tarde?</legend>
+<div class="radios"><label><input type="radio" name="disponibilidade" value="Sim" required> Sim</label><label><input type="radio" name="disponibilidade" value="Não"> Não</label></div><div class="err"></div></fieldset>
+<div class="check"><label><input type="checkbox" name="ciencia" required><span>Declaro estar ciente de que o grupo é gratuito e destinado a estudantes de Psicologia a partir do 5º semestre.</span></label><div class="err"></div></div>
+<div class="check"><label><input type="checkbox" name="privacidade" required><span>Li e concordo com o uso dos meus dados conforme o aviso de privacidade abaixo.</span></label><div class="err"></div></div>
+<div><button class="btn" type="submit" id="send">ENVIAR INSCRIÇÃO</button><div class="err" id="gerr" role="alert"></div></div>
+</form>
+<div id="done" class="ok" hidden tabindex="-1">
+<h3>Inscrição recebida. Obrigado por vir!</h3>
+<p style="margin:0 auto 1em">Que bom ter você por perto. Em breve enviaremos os próximos encaminhamentos pelo e-mail ou WhatsApp que você informou.</p>
+</div>
+<details id="priv"><summary>Aviso de privacidade</summary>
+<p style="margin-top:10px">Os dados desta inscrição são coletados com a única finalidade de organizar o Figura &amp; Fundo: confirmar seu perfil, entrar em contato e enviar informações sobre os encontros. Não são vendidos, compartilhados com terceiros nem usados para outros fins. O acesso é restrito aos responsáveis pela organização do grupo. Você pode pedir a correção ou exclusão dos seus dados a qualquer momento pelo contato indicado no rodapé.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap fgrid">
+<div><p><strong style="font-family:var(--serif);font-size:1.2rem">Figura &amp; Fundo</strong><br>Grupo de estudos em Gestalt-terapia</p><p>Participação gratuita, sem taxa de inscrição ou mensalidade.</p></div>
+<div><p>Público: estudantes de Psicologia a partir do 5º semestre.</p><p>Modalidade: on-line.</p></div>
+<div><p><strong>Contato dos organizadores</strong></p>
+<p>E-mail: <span contenteditable="false">[preencher]</span></p><p>Instagram/WhatsApp: [preencher]</p>
+<p><a href="#priv" onclick="document.getElementById('priv').open=true">Aviso de privacidade</a></p></div>
+</div></footer>
+
+<script>
+// 1) Cole aqui a URL do Google Apps Script publicado (veja LEIA-ME.md)
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbw7HIawiobq2aDWS8RLEYOAndcXVZJD_O0bw_pv2pArU_xFkW_M-qXPhEBqNTrUkLs9Bg/exec";
+
+const f = document.getElementById('f'), gerr = document.getElementById('gerr');
+const msgs = {nome:'Informe seu nome completo.',email:'Informe um e-mail válido.',whatsapp:'Informe um WhatsApp com DDD.',instituicao:'Informe sua instituição.',semestre:'Selecione seu semestre.',cidade_estado:'Informe cidade e estado.',motivacao:'Conte brevemente seu interesse (mín. 20 caracteres).',disponibilidade:'Escolha uma opção.',ciencia:'É necessário confirmar a ciência.',privacidade:'É necessário concordar com o aviso.'};
+function check(){
+  let ok=true,first=null;
+  f.querySelectorAll('.err').forEach(e=>{if(e.id!=='gerr')e.textContent=''});
+  f.querySelectorAll('[aria-invalid]').forEach(e=>e.removeAttribute('aria-invalid'));
+  Object.keys(msgs).forEach(n=>{
+    const els=[...f.querySelectorAll(`[name=${n}]`)],el=els[0];let bad=false;
+    if(el.type==='radio')bad=!els.some(x=>x.checked);
+    else if(el.type==='checkbox')bad=!el.checked;
+    else{const v=el.value.trim();bad=!v;
+      if(!bad&&n==='email')bad=!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      if(!bad&&n==='whatsapp')bad=v.replace(/\D/g,'').length<10;
+      if(!bad&&n==='motivacao')bad=v.length<20;
+      if(!bad&&n==='semestre')bad=v==='Menos de 5º semestre'}
+    if(bad){ok=false;const box=el.closest('div.check,fieldset,div');
+      const err=(el.closest('.check')||el.closest('fieldset')||el.parentElement).querySelector('.err');
+      err.textContent=(n==='semestre'&&el.value)?'O grupo é para quem está a partir do 5º semestre.':msgs[n];
+      els.forEach(x=>x.setAttribute('aria-invalid','true'));first=first||el}
+  });
+  if(first)first.focus();return ok;
+}
+f.addEventListener('submit',async e=>{
+  e.preventDefault();gerr.textContent='';
+  if(f.website.value)return; // anti-spam
+  if(!check())return;
+  if(!ENDPOINT){gerr.textContent='O formulário ainda não foi conectado à planilha. Configure o ENDPOINT (veja LEIA-ME.md).';return}
+  const btn=document.getElementById('send');btn.disabled=true;btn.textContent='Enviando…';
+  const d=Object.fromEntries(new FormData(f));delete d.website;
+  try{
+    await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+    f.hidden=true;const done=document.getElementById('done');done.hidden=false;done.focus();done.scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(err){gerr.textContent='Não foi possível enviar agora. Verifique sua conexão e tente novamente.';btn.disabled=false;btn.textContent='ENVIAR INSCRIÇÃO'}
+});
+</script>
+</body>
+</html>
